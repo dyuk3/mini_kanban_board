@@ -1,6 +1,7 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import queryPlugin from '@tanstack/eslint-plugin-query';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -14,5 +15,16 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
 ]);
+
+export default [
+  {
+    plugins: {
+      '@tanstack/query': queryPlugin,
+    },
+    rules: {
+      ...queryPlugin.configs.recommended.rules,
+    },
+  },
+];
 
 export default eslintConfig;
