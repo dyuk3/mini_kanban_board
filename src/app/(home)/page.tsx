@@ -1,12 +1,12 @@
 'use client';
 import Board from '@/common/components/Board';
 
-const page = () => {
+const Page = () => {
   return (
-    <div className='flex h-full '>
+    <div className="flex flex-1 min-h-0 w-full">
       <Board />
     </div>
   );
 };
 
-export default page;
+export default Page;
